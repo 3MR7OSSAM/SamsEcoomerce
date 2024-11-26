@@ -10,6 +10,8 @@ services:
     environment:
       - FLASK_ENV=development
       - FLASK_SECRET_KEY=your-secret-key
+    # env_file:
+    #   - .env  # Add the env_file property here
     depends_on:
       - db
 
@@ -21,5 +23,3 @@ services:
       POSTGRES_DB: flaskdb
     ports:
       - "5432:5432"
-env_file:
-  - .env
