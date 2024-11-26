@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter Fashion - Products</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+    .hero-section {
+    background: url('{{ url_for("static", filename="Images/hero_back.jpg") }}') no-repeat center center;
+background-size: 100% auto; /* Fill width and adjust height proportionally */
+height: 120vh;  /* Adjust the height as needed */
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+text-align: center;
+}
+</style>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-us">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+    </section>
+
+    
+
+    <!-- Products Section -->
+    <main>
+        <section class="container mt-5" id="products">
+            <h2 class="text-center mb-4">Our Products</h2>
+            <div id="product-list" class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 Winter Fashion. All Rights Reserved.</p>
+            <p>Follow us on:</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Bootstrap and FontAwesome JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        // Fetch products from the API
+        $(document).ready(function () {
+            $.ajax({
+                url: 'http://127.0.0.1:5001/api/product-data', // API endpoint
+                method: 'GET',
+                success: function (data) {
+                    // Check if the API returned any products
+                    if (data.length > 0) {
+                        // Loop through each product and create HTML
+                        data.forEach(function (product) {
+                            // <p class="card-text">${product.Description}</p>
+
+                            const productHtml = `
+                            <div class="col-md-4 mb-4">
+                                <div class="card shadow">
+                                    <img src="${product.Image}" class="card-img-top img-fluid" alt="${product.ProductName}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${product.ProductName}</h5>
+                                        <p class="card-text"><strong>Vendor:</strong> ${product.Vendor}</p>
+                                        <p class="card-text"><strong>Price:</strong> $${product.Price}</p>
+                                        <p class="card-text"><strong>Quantity:</strong> ${product.Quantity}</p>
+                                        <a href="#" class="btn btn-primary">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+
+                            // Append the product card to the product list
+                            $('#product-list').append(productHtml);
+                        });
+                    } else {
+                        $('#product-list').append('<p class="no-products">No products available.</p>');                    }
+                },
+                error: function () {
+                    $('#product-list').append('<p class="no-products">No products available.</p>');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

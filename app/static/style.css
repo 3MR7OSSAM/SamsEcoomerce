@@ -1,0 +1,119 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif; /* Use Poppins as the primary font */
+}
+.no-products {
+text-align: center;
+width: 100%;
+margin-top: 50px;
+font-size: 1.5rem;
+color: #333;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 200px; /* Adjust the height as needed */
+}
+/* Custom Navbar Styling */
+.navbar {
+    background-color:transparent;
+}
+.navbar-brand img {
+    height: 50px;
+}
+.nav-link {
+    color: #3aadaa !important;
+    margin-right: 15px;
+    font-weight: bold;
+
+}
+.nav-link:hover {
+    color: #3aadaa !important;
+}
+
+
+.hero-section h1 {
+font-size: 3rem;
+text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+.hero-section p {
+font-size: 1.5rem;
+margin-top: 10px;
+text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+/* Footer Styling */
+footer {
+    background-color: #3aadaa;
+    color: #f8f9fa;
+    padding: 20px 0;
+}
+footer a {
+    color: #3aadaa;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer .social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+
+} 
+
+.card {
+    border: none; /* Remove default border */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Clip content to rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animations */
+    background-color: #f9f9f9; /* Subtle background color */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Modern shadow */
+}
+
+.card-img-top {
+    border-bottom: 4px solid #3aadaa; /* Accent border for images */
+    transition: transform 0.3s ease; /* Smooth image zoom */
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.25rem; /* Slightly larger font for titles */
+    color: #333; /* Modern dark text */
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: #666; /* Subtle gray text for descriptions */
+    font-size: 0.9rem;
+    line-height: 1.5; /* Better readability */
+}
+
+.card-body {
+    padding: 1.5rem; /* Add generous spacing */
+    text-align: center; /* Center-align text */
+}
+
+.card-text strong {
+    color: #3aadaa; /* Accent color for labels */
+}
+
+.btn-primary {
+    /* margin-top: 1rem; */
+    border-radius: 25px; /* Rounded button */
+    background-color: #3aadaa; /* Primary blue color */
+    border: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3aadaa; /* Darker blue on hover */
+}
+
+
+
