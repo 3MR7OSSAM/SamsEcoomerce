@@ -5,6 +5,24 @@ This Flask application serves as a product management system that allows users t
 
 ---
 
+### Image Previews
+
+#### 1. Screenshot of Feature 1:
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/8d6fc61b-4194-4f3d-afb1-7cf0bb6f3561" width="500px">
+</div>
+#### 2. Screenshot of Feature 2:
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5b20407b-0133-44f5-8df4-cf508241b773" width="500px">
+</div>
+#### 3. Screenshot of Feature 3:
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d51763c8-fcc8-438f-9c01-70e0b3f81611" width="500px">
+</div>
+
+
+
+
 ## Endpoints
 
 ### 1. `GET /`
@@ -183,22 +201,4 @@ Fields:
 
 ---
 
-## Repository Images
-
-### Image Previews
-
-#### 1. Screenshot of Feature 1:
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/d51763c8-fcc8-438f-9c01-70e0b3f81611" width="500px">
-</div>
-
-#### 2. Screenshot of Feature 2:
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/5b20407b-0133-44f5-8df4-cf508241b773" width="500px">
-</div>
-
-#### 3. Screenshot of Feature 3:
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/8d6fc61b-4194-4f3d-afb1-7cf0bb6f3561" width="500px">
-</div>
 
