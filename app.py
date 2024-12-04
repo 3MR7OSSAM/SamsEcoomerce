@@ -2,6 +2,7 @@ from app import create_app
 import os
 
 app = create_app()
+###
 
 # Configurations
 app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql://{os.getenv('POSTGRES_USER', 'user')}:{os.getenv('POSTGRES_PASSWORD', 'password')}@db:5432/{os.getenv('POSTGRES_DB', 'flaskdb')}"
